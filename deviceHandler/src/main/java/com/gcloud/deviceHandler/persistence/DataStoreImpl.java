@@ -15,8 +15,7 @@ public class DataStoreImpl implements DataStore {
     private KeyFactory keyFactory;
 
     public DataStoreImpl() {
-        datastore = DatastoreOptions.
-                builder().host("http://localhost:8081").projectId("device-handler").build().service();
+        datastore = DatastoreOptions.getDefaultInstance().getService();
         keyFactory = datastore.newKeyFactory().setKind("device");
     }
 
